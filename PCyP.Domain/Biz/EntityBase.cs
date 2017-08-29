@@ -13,5 +13,6 @@ namespace PCyP.Domain.Biz
         public int CreatedBy { get; set; }
         public DateTime ChangedOn { get; set; }
         public int ChangedBy { get; set; }
+        
     }
 }
