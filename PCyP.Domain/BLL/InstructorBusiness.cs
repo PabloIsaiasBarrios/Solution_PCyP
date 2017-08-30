@@ -9,16 +9,16 @@ namespace PCyP.Domain.BLL
 {
     public static class InstructorBusiness
     {
-        private static List<Instructor> _instructorList = new List<Instructor>();
+        private static List<Instructor> _InstructorList = new List<Instructor>();
 
         public static void Add(Instructor instructor)
         {
-            _instructorList.Add(instructor);
+            _InstructorList.Add(instructor);
         }
 
         public static List<Instructor> GetInstructorList()
         {
-            return _instructorList;
+            return _InstructorList;
         }
     }
 }

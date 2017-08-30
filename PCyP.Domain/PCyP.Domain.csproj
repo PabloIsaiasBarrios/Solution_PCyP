@@ -47,6 +47,7 @@
     <Compile Include="Biz\Student.cs" />
     <Compile Include="BLL\CategoryBusiness.cs" />
     <Compile Include="BLL\InstructorBusiness.cs" />
+    <Compile Include="BLL\StudentBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,7 +10,7 @@ namespace PCyP.Domain.BLL
     public static class CategoryBusiness
     {
 
-        private static List<Category> _categoryList = new List<Category>();
+        private static List<Category> _CategoryList = new List<Category>();
 
         /// <summary>
         /// Descripcion del metodo Add
@@ -18,7 +18,7 @@ namespace PCyP.Domain.BLL
         /// <param name="categoria"></param>
         public static void Add(Category categoria)
         {
-            _categoryList.Add(categoria);
+            _CategoryList.Add(categoria);
         }
         /// <summary>
         /// Descripcion del metodo GetCategoryList
@@ -26,7 +26,7 @@ namespace PCyP.Domain.BLL
         /// <returns></returns>
         public static List<Category>  GetCategoryList()
         {
-            return _categoryList;
+            return _CategoryList;
         }
         
     }
