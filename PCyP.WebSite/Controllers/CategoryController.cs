@@ -1,26 +1,27 @@
-﻿using PCyP.Domain.Biz;
-using PCyP.Domain.BLL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using PCyP.Domain.DAL;
+using PCyP.Domain.Biz;
 using System.Web.Mvc;
+using PCyP.Domain.BLL;
 
 namespace PCyP.WebSite.Controllers
 {
     public class CategoryController : Controller
     {
+
         // GET: Category
         public ActionResult Index()
         {
-            var lista = CategoryBusiness.GetCategoryList();
-            return View(lista);
+            return View(CategoryBusiness.GetCategoryList());
         }
 
         // GET: Category/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+            return View(CategoryBusiness.getCategoryDetails(id));
         }
 
         // GET: Category/Create
@@ -36,9 +37,8 @@ namespace PCyP.WebSite.Controllers
             try
             {
 
-                // TODO: Add insert logic here
                 CategoryBusiness.Add(model);
-                return RedirectToAction("Index");
+                return Redirect("Index");
             }
             catch
             {
@@ -47,19 +47,18 @@ namespace PCyP.WebSite.Controllers
         }
 
         // GET: Category/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View();
+            return View(CategoryBusiness.getCategoryDetails(id));
         }
 
         // POST: Category/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Category model)
         {
             try
             {
-                // TODO: Add update logic here
-
+                CategoryBusiness.EditCategory(model);
                 return RedirectToAction("Index");
             }
             catch
@@ -69,19 +68,19 @@ namespace PCyP.WebSite.Controllers
         }
 
         // GET: Category/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
-            return View();
+            return View(CategoryBusiness.getCategoryDetails(id));
         }
 
         // POST: Category/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Category model)
         {
             try
             {
                 // TODO: Add delete logic here
-
+                CategoryBusiness.DeleteCategory(model);
                 return RedirectToAction("Index");
             }
             catch

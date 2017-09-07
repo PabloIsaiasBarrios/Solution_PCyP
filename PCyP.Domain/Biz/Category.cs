@@ -9,7 +9,6 @@ namespace PCyP.Domain.Biz
     public class Category : EntityBase
     {
         public String Name { get; set; }
-        public int MyProperty { get; set; }
 
         public Category()
         {
