@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="PCyP.Domain.Biz.Category">
+    <Position X="0.75" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Biz\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCyP.Domain.Biz.Country">
+    <Position X="6.75" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Biz\Country.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCyP.Domain.Biz.EntityBase">
+    <Position X="5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAiAAAAAAAQAAAAAAE=</HashCode>
+      <FileName>Biz\EntityBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCyP.Domain.Biz.Instructor">
+    <Position X="9.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>gEAAAGAAAAKAAAAAAAAQAAAAACAAAAAAAAAAAQAAAAg=</HashCode>
+      <FileName>Biz\Instructor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCyP.Domain.Biz.Student">
+    <Position X="3.5" Y="3" Width="2.5" />
+    <AssociationLine Name="Country" Type="PCyP.Domain.Biz.Country" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="5.261" />
+        <Point X="7.562" Y="5.261" />
+        <Point X="7.562" Y="4.684" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACIAAACIAAAAAAAAAAIQAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Biz\Student.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Country" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

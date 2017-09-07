@@ -8,17 +8,44 @@ using System.Threading.Tasks;
 
 namespace PCyP.Domain.BLL
 {
-    public static class CategoryBusiness
+    public class CategoryBusiness
     {
+        private CategoryRepository db;
 
+
+        #region Singleton
+
+
+        private static CategoryBusiness _instance;
+
+        private CategoryBusiness()
+        {
+            this.db = new CategoryRepository();
+        }
+
+        public static CategoryBusiness Instance
+        {
+            get
+            {
+
+                if (_instance == null)
+                    _instance = new CategoryBusiness();
+                return _instance;
+            }
+
+        } 
+
+
+        #endregion
+        
         
         /// <summary>
         /// Descripcion del metodo Add
         /// </summary>
         /// <param name="categoria"></param>
-        public static void Add(Category categoria)
+        public void Add(Category categoria)
         {
-            var db = new CategoryRepository();
+
             categoria.Id = Guid.NewGuid().ToString();
             categoria.CreatedOn = DateTime.Now;
             categoria.CreatedBy = 0;
@@ -30,28 +57,27 @@ namespace PCyP.Domain.BLL
         /// Descripcion del metodo GetCategoryList
         /// </summary>
         /// <returns></returns>
-        public static List<Category>  GetCategoryList()
+        public List<Category> GetCategoryList()
         {
-            var db = new CategoryRepository();
+
             return db.All();
         }
 
-        public static Category getCategoryDetails(string id)
+        public Category getCategoryDetails(string id)
         {
-            var db = new CategoryRepository();
+
             var categoria = db.Find(new Category { Id = id });
             return categoria;
         }
 
-        public static void EditCategory(Category model)
+        public void EditCategory(Category model)
         {
-            var db = new CategoryRepository();
+
             db.Edit(model);
         }
 
-        public static void DeleteCategory(Category model)
+        public void DeleteCategory(Category model)
         {
-            var db = new CategoryRepository();
             db.Delete(model);
         }
     }

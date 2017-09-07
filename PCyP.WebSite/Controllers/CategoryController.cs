@@ -15,13 +15,13 @@ namespace PCyP.WebSite.Controllers
         // GET: Category
         public ActionResult Index()
         {
-            return View(CategoryBusiness.GetCategoryList());
+            return View(CategoryBusiness.Instance.GetCategoryList());
         }
 
         // GET: Category/Details/5
         public ActionResult Details(string id)
         {
-            return View(CategoryBusiness.getCategoryDetails(id));
+            return View(CategoryBusiness.Instance.getCategoryDetails(id));
         }
 
         // GET: Category/Create
@@ -37,7 +37,7 @@ namespace PCyP.WebSite.Controllers
             try
             {
 
-                CategoryBusiness.Add(model);
+                CategoryBusiness.Instance.Add(model);
                 return Redirect("Index");
             }
             catch
@@ -49,7 +49,7 @@ namespace PCyP.WebSite.Controllers
         // GET: Category/Edit/5
         public ActionResult Edit(string id)
         {
-            return View(CategoryBusiness.getCategoryDetails(id));
+            return View(CategoryBusiness.Instance.getCategoryDetails(id));
         }
 
         // POST: Category/Edit/5
@@ -58,7 +58,7 @@ namespace PCyP.WebSite.Controllers
         {
             try
             {
-                CategoryBusiness.EditCategory(model);
+                CategoryBusiness.Instance.EditCategory(model);
                 return RedirectToAction("Index");
             }
             catch
@@ -70,7 +70,7 @@ namespace PCyP.WebSite.Controllers
         // GET: Category/Delete/5
         public ActionResult Delete(string id)
         {
-            return View(CategoryBusiness.getCategoryDetails(id));
+            return View(CategoryBusiness.Instance.getCategoryDetails(id));
         }
 
         // POST: Category/Delete/5
@@ -80,7 +80,7 @@ namespace PCyP.WebSite.Controllers
             try
             {
                 // TODO: Add delete logic here
-                CategoryBusiness.DeleteCategory(model);
+                CategoryBusiness.Instance.DeleteCategory(model);
                 return RedirectToAction("Index");
             }
             catch
