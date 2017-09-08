@@ -45,10 +45,9 @@ namespace PCyP.Domain.BLL
         /// <param name="categoria"></param>
         public void Add(Category categoria)
         {
-
             categoria.Id = Guid.NewGuid().ToString();
             categoria.CreatedOn = DateTime.Now;
-            categoria.CreatedBy = 0;
+            categoria.CreatedBy = 0; // Environment.UserName // Obtener usuario
             categoria.ChangedOn = DateTime.Now;
             categoria.ChangedBy = 0;
             db.Add(categoria);
@@ -59,20 +58,19 @@ namespace PCyP.Domain.BLL
         /// <returns></returns>
         public List<Category> GetCategoryList()
         {
-
             return db.All();
         }
 
-        public Category getCategoryDetails(string id)
+        public Category GetCategoryDetails(string id)
         {
-
             var categoria = db.Find(new Category { Id = id });
             return categoria;
         }
 
         public void EditCategory(Category model)
         {
-
+            model.ChangedOn = DateTime.Now;
+            model.ChangedBy = 0;
             db.Edit(model);
         }
 

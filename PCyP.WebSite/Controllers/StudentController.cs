@@ -13,14 +13,13 @@ namespace PCyP.WebSite.Controllers
         // GET: Student
         public ActionResult Index()
         {
-            var lista = StudentBusiness.GetStudentList();
-            return View(lista);
+            return View(StudentBusiness.Instance.GetStudentList());
         }
 
         // GET: Student/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+            return View(StudentBusiness.Instance.GetStudentDetails(id));
         }
 
         // GET: Student/Create
@@ -36,7 +35,7 @@ namespace PCyP.WebSite.Controllers
             try
             {
                 // TODO: Add insert logic here
-                StudentBusiness.Add(student);
+                StudentBusiness.Instance.Add(student);
                 return RedirectToAction("Index");
             }
             catch
@@ -46,19 +45,19 @@ namespace PCyP.WebSite.Controllers
         }
 
         // GET: Student/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View();
+            return View(StudentBusiness.Instance.GetStudentDetails(id));
         }
 
         // POST: Student/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Student student)
         {
             try
             {
                 // TODO: Add update logic here
-
+                StudentBusiness.Instance.EditStudent(student);
                 return RedirectToAction("Index");
             }
             catch
@@ -68,19 +67,19 @@ namespace PCyP.WebSite.Controllers
         }
 
         // GET: Student/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
-            return View();
+            return View(StudentBusiness.Instance.GetStudentDetails(id));
         }
 
         // POST: Student/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Student student)
         {
             try
             {
                 // TODO: Add delete logic here
-
+                StudentBusiness.Instance.DeleteStudent(student);
                 return RedirectToAction("Index");
             }
             catch

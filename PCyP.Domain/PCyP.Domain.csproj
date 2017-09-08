@@ -71,6 +71,8 @@
     <Compile Include="DAL\BaseRepository.cs" />
     <Compile Include="DAL\CategoryRepository.cs" />
     <Compile Include="DAL\ICrud.cs" />
+    <Compile Include="DAL\InstructorRepository.cs" />
+    <Compile Include="DAL\StudentRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

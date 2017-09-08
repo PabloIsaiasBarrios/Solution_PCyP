@@ -12,18 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CreatedOn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ChangedOn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ChangedBy)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Alias)
         </th>
         <th>
@@ -39,37 +27,16 @@
             @Html.DisplayNameFor(model => model.City)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CountryId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CountrySort)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.DateOfBirth)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Gender)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotalEnrollments)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChangedOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChangedBy)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Alias)
         </td>
@@ -86,19 +53,10 @@
             @Html.DisplayFor(modelItem => item.City)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CountryId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CountrySort)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.DateOfBirth)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Gender)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalEnrollments)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

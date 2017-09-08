@@ -12,11 +12,10 @@ namespace PCyP.Domain.Biz
         public String FirstName { get; set; }
         public String LastName { get; set; }
         public String Email { get; set; }
-        public String City { get; set; }
-        public Country Country { get; set; }
+        public String City { get; set; }        
         public DateTime DateOfBirth { get; set; }
         public String Gender { get; set; }
-
+        public Country Country { get; set; }
 
         public Student()
         {

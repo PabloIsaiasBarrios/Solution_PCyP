@@ -21,7 +21,7 @@ namespace PCyP.WebSite.Controllers
         // GET: Category/Details/5
         public ActionResult Details(string id)
         {
-            return View(CategoryBusiness.Instance.getCategoryDetails(id));
+            return View(CategoryBusiness.Instance.GetCategoryDetails(id));
         }
 
         // GET: Category/Create
@@ -49,7 +49,7 @@ namespace PCyP.WebSite.Controllers
         // GET: Category/Edit/5
         public ActionResult Edit(string id)
         {
-            return View(CategoryBusiness.Instance.getCategoryDetails(id));
+            return View(CategoryBusiness.Instance.GetCategoryDetails(id));
         }
 
         // POST: Category/Edit/5
@@ -70,7 +70,7 @@ namespace PCyP.WebSite.Controllers
         // GET: Category/Delete/5
         public ActionResult Delete(string id)
         {
-            return View(CategoryBusiness.Instance.getCategoryDetails(id));
+            return View(CategoryBusiness.Instance.GetCategoryDetails(id));
         }
 
         // POST: Category/Delete/5

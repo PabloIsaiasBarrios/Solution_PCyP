@@ -12,18 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CreatedOn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ChangedOn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ChangedBy)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Alias)
         </th>
         <th>
@@ -44,38 +32,11 @@
         <th>
             @Html.DisplayNameFor(model => model.Salary)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotalCourses)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ExternalId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DeletedOn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DeletedBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsDeleted)
-        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChangedOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChangedBy)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Alias)
         </td>
@@ -96,21 +57,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Salary)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalCourses)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ExternalId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DeletedOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DeletedBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsDeleted)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

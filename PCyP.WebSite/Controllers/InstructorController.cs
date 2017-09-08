@@ -13,14 +13,13 @@ namespace PCyP.WebSite.Controllers
         // GET: Instructor
         public ActionResult Index()
         {
-            var lista = InstructorBusiness.GetInstructorList();
-            return View(lista);
+            return View(InstructorBusiness.Instance.GetInstructorList());
         }
 
         // GET: Instructor/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+            return View(InstructorBusiness.Instance.GetInstructorDetails(id));
         }
 
         // GET: Instructor/Create
@@ -36,7 +35,7 @@ namespace PCyP.WebSite.Controllers
             try
             {
                 // TODO: Add insert logic here
-                InstructorBusiness.Add(instructor);
+                InstructorBusiness.Instance.Add(instructor);
                 return RedirectToAction("Index");
             }
             catch
@@ -46,19 +45,19 @@ namespace PCyP.WebSite.Controllers
         }
 
         // GET: Instructor/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View();
+            return View(InstructorBusiness.Instance.GetInstructorDetails(id));
         }
 
         // POST: Instructor/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Instructor instructor)
         {
             try
             {
                 // TODO: Add update logic here
-
+                InstructorBusiness.Instance.EditInstructor(instructor);
                 return RedirectToAction("Index");
             }
             catch
@@ -68,19 +67,19 @@ namespace PCyP.WebSite.Controllers
         }
 
         // GET: Instructor/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
-            return View();
+            return View(InstructorBusiness.Instance.GetInstructorDetails(id));
         }
 
         // POST: Instructor/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Instructor instructor)
         {
             try
             {
                 // TODO: Add delete logic here
-
+                InstructorBusiness.Instance.DeleteInstructor(instructor);
                 return RedirectToAction("Index");
             }
             catch
