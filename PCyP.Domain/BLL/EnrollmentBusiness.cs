@@ -8,26 +8,26 @@ using System.Threading.Tasks;
 
 namespace PCyP.Domain.BLL
 {
-    class ClassBusiness
+    public class EnrollmentBusiness
     {
-        private ClassRepository db;
+        private EnrollmentRepository db;
 
 
         #region Singleton
 
-        private static ClassBusiness _instance;
+        private static EnrollmentBusiness _instance;
 
-        private ClassBusiness()
+        private EnrollmentBusiness()
         {
-            this.db = new ClassRepository();
+            this.db = new EnrollmentRepository();
         }
 
-        public static ClassBusiness Instance
+        public static EnrollmentBusiness Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new ClassBusiness();
+                    _instance = new EnrollmentBusiness();
                 return _instance;
             }
         }
@@ -35,10 +35,9 @@ namespace PCyP.Domain.BLL
 
         #endregion
 
-        public void Add(Class model)
+        public void Add(Enrollment model)
         {
             model.Id = Guid.NewGuid().ToString();
-            model.TotalEnrollments = 0;
             model.CreatedOn = DateTime.Now;
             model.CreatedBy = 0;
             model.ChangedOn = DateTime.Now;
@@ -46,25 +45,25 @@ namespace PCyP.Domain.BLL
             db.Add(model);
         }
 
-        public List<Class> GetClassList()
+        public List<Enrollment> GetEnrollmentList()
         {
             return this.db.All();
         }
 
-        public Class GetClassDetails(string id)
+        public Enrollment GetEnrollmentDetails(string id)
         {
-            var clase = db.Find(new Class { Id = id });
-            return clase;
+            var model = db.Find(new Enrollment { Id = id });
+            return model;
         }
 
-        public void EditClass(Class model)
+        public void EditEnrollment(Enrollment model)
         {
             model.ChangedOn = DateTime.Now;
             model.ChangedBy = 0;
             db.Edit(model);
         }
 
-        public void DeleteClass(Class model)
+        public void DeleteEnrollment(Enrollment model)
         {
             db.Delete(model);
         }

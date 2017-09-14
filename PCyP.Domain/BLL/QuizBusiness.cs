@@ -8,26 +8,26 @@ using System.Threading.Tasks;
 
 namespace PCyP.Domain.BLL
 {
-    class ClassBusiness
+    public class QuizBusiness
     {
-        private ClassRepository db;
+        private QuizRepository db;
 
 
         #region Singleton
 
-        private static ClassBusiness _instance;
+        private static QuizBusiness _instance;
 
-        private ClassBusiness()
+        private QuizBusiness()
         {
-            this.db = new ClassRepository();
+            this.db = new QuizRepository();
         }
 
-        public static ClassBusiness Instance
+        public static QuizBusiness Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new ClassBusiness();
+                    _instance = new QuizBusiness();
                 return _instance;
             }
         }
@@ -35,10 +35,9 @@ namespace PCyP.Domain.BLL
 
         #endregion
 
-        public void Add(Class model)
+        public void Add(Quiz model)
         {
             model.Id = Guid.NewGuid().ToString();
-            model.TotalEnrollments = 0;
             model.CreatedOn = DateTime.Now;
             model.CreatedBy = 0;
             model.ChangedOn = DateTime.Now;
@@ -46,25 +45,25 @@ namespace PCyP.Domain.BLL
             db.Add(model);
         }
 
-        public List<Class> GetClassList()
+        public List<Quiz> GetQuizList()
         {
             return this.db.All();
         }
 
-        public Class GetClassDetails(string id)
+        public Quiz GetQuizDetails(string id)
         {
-            var clase = db.Find(new Class { Id = id });
-            return clase;
+            var model = db.Find(new Quiz { Id = id });
+            return model;
         }
 
-        public void EditClass(Class model)
+        public void EditQuiz(Quiz model)
         {
             model.ChangedOn = DateTime.Now;
             model.ChangedBy = 0;
             db.Edit(model);
         }
 
-        public void DeleteClass(Class model)
+        public void DeleteQuiz(Quiz model)
         {
             db.Delete(model);
         }
