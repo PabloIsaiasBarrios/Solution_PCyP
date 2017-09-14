@@ -61,15 +61,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Biz\Category.cs" />
+    <Compile Include="Biz\Class.cs" />
     <Compile Include="Biz\Country.cs" />
+    <Compile Include="Biz\Course.cs" />
     <Compile Include="Biz\EntityBase.cs" />
     <Compile Include="Biz\Instructor.cs" />
     <Compile Include="Biz\Student.cs" />
     <Compile Include="BLL\CategoryBusiness.cs" />
+    <Compile Include="BLL\ClassBusiness.cs" />
+    <Compile Include="BLL\CountryBusiness.cs" />
+    <Compile Include="BLL\CourseBusiness.cs" />
     <Compile Include="BLL\InstructorBusiness.cs" />
     <Compile Include="BLL\StudentBusiness.cs" />
     <Compile Include="DAL\BaseRepository.cs" />
     <Compile Include="DAL\CategoryRepository.cs" />
+    <Compile Include="DAL\ClassRepository.cs" />
+    <Compile Include="DAL\CountryRepository.cs" />
+    <Compile Include="DAL\CourseRepository.cs" />
     <Compile Include="DAL\ICrud.cs" />
     <Compile Include="DAL\InstructorRepository.cs" />
     <Compile Include="DAL\StudentRepository.cs" />
