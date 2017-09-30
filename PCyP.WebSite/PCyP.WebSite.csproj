@@ -171,6 +171,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\GestorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstructorController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -254,6 +255,7 @@
     <Content Include="Views\Instructor\Edit.cshtml" />
     <Content Include="Views\Instructor\Delete.cshtml" />
     <Content Include="Views\Instructor\Details.cshtml" />
+    <Content Include="Views\Gestor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

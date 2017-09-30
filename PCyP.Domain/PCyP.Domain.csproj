@@ -69,6 +69,7 @@
     <Compile Include="Biz\Instructor.cs" />
     <Compile Include="Biz\Quiz.cs" />
     <Compile Include="Biz\Student.cs" />
+    <Compile Include="BLL\CargarDatos.cs" />
     <Compile Include="BLL\CategoryBusiness.cs" />
     <Compile Include="BLL\ClassBusiness.cs" />
     <Compile Include="BLL\CountryBusiness.cs" />
